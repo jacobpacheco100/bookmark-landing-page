@@ -25,14 +25,22 @@ nav {
 }
 
 .nav-content {
+  width: 100%;
+  height: 100px;
+  @include flex-row;
   ul {
     @include flex-inline;
+    margin: 0;
+
     a {
-      color: $grayBlue;
+      margin: 0 20px;
+    }
+
+    .login-btn {
+      padding: 10px 28px;
+      border-radius: 5px;
+      background: $softRed;
+      color: white;
     }
   }
-}
-
-.fucking-link {
-  color: red;
 }
