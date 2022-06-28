@@ -1,0 +1,57 @@
+/// Breakpoints
+$mobile: 375px;
+$desktop: 1440px;
+
+/// Colors
+
+//Primary
+$softBlue: hsl(231, 69%, 60%);
+$softRed: hsl(0, 94%, 66%);
+
+//Neutral
+$grayBlue: hsl(229, 8%, 60%);
+$darkBlue: hsl(229, 31%, 21%);
+
+/// fonts
+@import url(https://fonts.google.com/specimen/Rubik);
+
+$t-sml: 18px;
+$t-bold: 500;
+$t-reg: 400;
+
+@mixin bodyT {
+  font-size: $t-sml;
+  font-family: "Rubik", sans-serif;
+  font-weight: $t-reg;
+}
+
+/// Flex Layout
+
+// below just for DRY!
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+// ^
+
+@mixin flex-inline {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-row {
+  @include flex-center;
+  flex-direction: row;
+}
+
+@mixin flex-col-center {
+  @include flex-center;
+  flex-direction: column;
+}
+@mixin flex-col-left {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-direction: column;
+}
