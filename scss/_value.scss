@@ -143,5 +143,7 @@ $btn-shadow: rgba(63, 71, 135, 0.197) 0px 4px 6px -1px,
 // section spacing
 
 section:not(.contact) {
-  margin-bottom: 150px;
+  margin-bottom: 150px !important;
 }
+
+// features underline

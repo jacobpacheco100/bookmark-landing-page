@@ -105,7 +105,7 @@ nav {
   }
 }
 
-// FEATURES
+/// FEATURES
 
 .features {
   text-align: center;
@@ -153,7 +153,6 @@ nav {
 
         li:nth-child(2) {
           border-top: none; // bottom is the same as top
-          border-bottom: 3px solid $softRed;
         }
 
         li {
@@ -163,11 +162,20 @@ nav {
       }
     }
   }
+
+  .bb-red {
+    border-bottom: 3px solid $softRed !important;
+  }
 }
 
 // feature info
 
 .feature-info {
+  .ft-info-content {
+    max-width: 500px;
+    @include margin-center;
+  }
+
   img {
     width: 100%;
     max-width: 600px;
@@ -178,20 +186,31 @@ nav {
   }
 
   p {
-    @include margin-center;
-    max-width: 400px;
-    margin-top: 22px;
   }
 
   button {
-    margin-top: 20px;
+    @include margin-center; //
   }
 
   @media (min-width: $desktop) {
     @include flex-row;
     @include margin-center;
+
+    .ft-info-content {
+      @include flex-col-left;
+      align-self: baseline;
+      justify-content: flex-start;
+      margin-top: 60px;
+      height: 206px;
+      width: 500px;
+    }
     max-width: 1130px;
     text-align: left;
+
+    .ft-info-content {
+      margin-left: 8%;
+      width: 100%;
+    }
 
     p,
     h1 {
@@ -200,6 +219,11 @@ nav {
 
     p {
       margin-top: 20px;
+    }
+
+    button {
+      margin: 0;
+      margin-top: 30px;
     }
   }
 }
