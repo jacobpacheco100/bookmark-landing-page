@@ -1,9 +1,10 @@
 @import "value";
 
-* {
+*,
+ul {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
 
 li,
@@ -13,9 +14,14 @@ a {
   color: $grayBlue;
 }
 
-html {
+body {
   @include bodyT;
-  color: $grayBlue;
+}
+
+h1,
+h2,
+h3 {
+  @include headingT;
 }
 
 // nav
@@ -41,6 +47,148 @@ nav {
       border-radius: 5px;
       background: $softRed;
       color: white;
+    }
+  }
+}
+
+.hamburger {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+// HERO
+
+.hero {
+  @include margin-center;
+
+  .inner-hero {
+    @include flex-col-center;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .hero-cta {
+    max-width: 450px;
+
+    p {
+      margin-top: 25px;
+      margin-bottom: 25px;
+    }
+  }
+
+  img {
+    max-width: 800px;
+    width: 80%;
+  }
+
+  @media (min-width: $desktop) {
+    .inner-hero {
+      @include flex-row;
+      text-align: left;
+    }
+
+    img {
+      padding-top: 80px;
+      width: 800px;
+    }
+  }
+}
+
+// FEATURES
+
+.features {
+  text-align: center;
+  .intro-features {
+    @include margin-center;
+    max-width: 450px;
+    p {
+      @include margin-center;
+      margin-top: 20px;
+      max-width: 450px;
+    }
+
+    ul {
+      @include flex-col-center;
+      border-top: 1px solid $grayBlue;
+      border-bottom: 1px solid $grayBlue;
+      margin: 80px 0;
+
+      li {
+        padding: 20px 0;
+        width: 100%;
+      }
+
+      li:nth-child(2) {
+        border-top: 1px solid $grayBlue;
+        border-bottom: 1px solid $grayBlue;
+      }
+    }
+  }
+
+  @media (min-width: $desktop) {
+    .intro-features {
+      max-width: 800px;
+
+      p {
+        max-width: 490px;
+      }
+
+      ul {
+        @include flex-row;
+        @include margin-center;
+        width: 100%;
+        border: none;
+
+        li:nth-child(2) {
+          border-top: none; // bottom is the same as top
+          border-bottom: 3px solid $softRed;
+        }
+
+        li {
+          border-bottom: 1px solid $grayBlue;
+        }
+      }
+    }
+  }
+}
+
+// feature info
+
+.feature-info {
+  margin-bottom: 100px;
+  img {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  h1 {
+    margin-top: 50px;
+  }
+
+  p {
+    @include margin-center;
+    max-width: 400px;
+    margin-top: 22px;
+  }
+
+  button {
+    margin-top: 20px;
+  }
+
+  @media (min-width: $desktop) {
+    @include flex-row;
+    @include margin-center;
+    max-width: 1130px;
+    text-align: left;
+
+    p,
+    h1 {
+      margin: 0;
+    }
+
+    p {
+      margin-top: 20px;
     }
   }
 }

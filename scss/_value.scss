@@ -1,6 +1,8 @@
 /// Breakpoints
 $mobile: 375px;
-$desktop: 1440px;
+$mobile-lg: 576px;
+$desktop: 1200px;
+$desktop-lg: 1440px;
 
 /// Colors
 
@@ -13,16 +15,21 @@ $grayBlue: hsl(229, 8%, 60%);
 $darkBlue: hsl(229, 31%, 21%);
 
 /// fonts
-@import url(https://fonts.google.com/specimen/Rubik);
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
 
 $t-sml: 16px;
-$t-bold: 500;
-$t-reg: 400;
 
 @mixin bodyT {
   font-size: $t-sml;
   font-family: "Rubik", sans-serif;
-  font-weight: $t-reg;
+  font-weight: 400;
+  color: $grayBlue;
+}
+
+@mixin headingT {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  color: $darkBlue;
 }
 
 /// Flex Layout
@@ -54,4 +61,32 @@ $t-reg: 400;
   align-items: baseline;
   justify-content: space-between;
   flex-direction: column;
+}
+
+// margin
+
+@mixin margin-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mt-6 {
+  margin-top: 170px;
+}
+
+// buttons
+
+.btn {
+  padding: 10px 28px;
+  border-radius: 5px;
+}
+
+.btn-blue {
+  background: $softBlue;
+  color: white;
+}
+
+.btn-gray {
+  background: hsl(233, 24%, 93%);
+  color: $darkBlue;
 }

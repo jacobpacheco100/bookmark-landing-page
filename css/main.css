@@ -1,8 +1,28 @@
-@import url(https://fonts.google.com/specimen/Rubik);
-* {
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+.mt-6 {
+  margin-top: 170px;
+}
+
+.btn {
+  padding: 10px 28px;
+  border-radius: 5px;
+}
+
+.btn-blue {
+  background: hsl(231deg, 69%, 60%);
+  color: white;
+}
+
+.btn-gray {
+  background: hsl(233deg, 24%, 93%);
+  color: hsl(229deg, 31%, 21%);
+}
+
+*,
+ul {
   margin: 0;
   padding: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
 
 li,
@@ -12,11 +32,19 @@ a {
   color: hsl(229deg, 8%, 60%);
 }
 
-html {
+body {
   font-size: 16px;
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   color: hsl(229deg, 8%, 60%);
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  color: hsl(229deg, 31%, 21%);
 }
 
 nav {
@@ -44,6 +72,143 @@ nav {
   border-radius: 5px;
   background: hsl(0deg, 94%, 66%);
   color: white;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.hero {
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero .inner-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-direction: column-reverse;
+  text-align: center;
+}
+.hero .hero-cta {
+  max-width: 450px;
+}
+.hero .hero-cta p {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+.hero img {
+  max-width: 800px;
+  width: 80%;
+}
+@media (min-width: 1200px) {
+  .hero .inner-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    text-align: left;
+  }
+  .hero img {
+    padding-top: 80px;
+    width: 800px;
+  }
+}
+
+.features {
+  text-align: center;
+}
+.features .intro-features {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 450px;
+}
+.features .intro-features p {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  max-width: 450px;
+}
+.features .intro-features ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  border-top: 1px solid hsl(229deg, 8%, 60%);
+  border-bottom: 1px solid hsl(229deg, 8%, 60%);
+  margin: 80px 0;
+}
+.features .intro-features ul li {
+  padding: 20px 0;
+  width: 100%;
+}
+.features .intro-features ul li:nth-child(2) {
+  border-top: 1px solid hsl(229deg, 8%, 60%);
+  border-bottom: 1px solid hsl(229deg, 8%, 60%);
+}
+@media (min-width: 1200px) {
+  .features .intro-features {
+    max-width: 800px;
+  }
+  .features .intro-features p {
+    max-width: 490px;
+  }
+  .features .intro-features ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border: none;
+  }
+  .features .intro-features ul li:nth-child(2) {
+    border-top: none;
+    border-bottom: 3px solid hsl(0deg, 94%, 66%);
+  }
+  .features .intro-features ul li {
+    border-bottom: 1px solid hsl(229deg, 8%, 60%);
+  }
+}
+
+.feature-info {
+  margin-bottom: 100px;
+}
+.feature-info img {
+  width: 100%;
+  max-width: 600px;
+}
+.feature-info h1 {
+  margin-top: 50px;
+}
+.feature-info p {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  margin-top: 22px;
+}
+.feature-info button {
+  margin-top: 20px;
+}
+@media (min-width: 1200px) {
+  .feature-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1130px;
+    text-align: left;
+  }
+  .feature-info p,
+.feature-info h1 {
+    margin: 0;
+  }
+  .feature-info p {
+    margin-top: 20px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
