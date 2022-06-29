@@ -14,10 +14,6 @@ a {
   color: $grayBlue;
 }
 
-body {
-  @include bodyT;
-}
-
 h1,
 h2,
 h3 {
@@ -40,13 +36,16 @@ nav {
 
     a {
       margin: 0 20px;
+      transition: all 0.1s ease-in;
+      padding-bottom: 5px;
+      &:hover:not(.btn) {
+        color: $softBlue;
+        border-bottom: 2px solid $softBlue;
+      }
     }
 
     .login-btn {
-      padding: 10px 28px;
-      border-radius: 5px;
-      background: $softRed;
-      color: white;
+      padding: 7px 28px;
     }
   }
 }
@@ -77,6 +76,10 @@ nav {
     }
   }
 
+  .hero-btn button:last-child {
+    margin-left: 10px;
+  }
+
   img {
     max-width: 800px;
     width: 80%;
@@ -91,6 +94,13 @@ nav {
     img {
       padding-top: 80px;
       width: 800px;
+    }
+  }
+
+  @media (max-width: 390px) {
+    button {
+      margin-top: 20px;
+      width: 185px;
     }
   }
 }
@@ -139,6 +149,7 @@ nav {
         @include margin-center;
         width: 100%;
         border: none;
+        margin: 50px 0 70px 0;
 
         li:nth-child(2) {
           border-top: none; // bottom is the same as top
@@ -147,6 +158,7 @@ nav {
 
         li {
           border-bottom: 1px solid $grayBlue;
+          padding-top: 0;
         }
       }
     }
@@ -156,7 +168,6 @@ nav {
 // feature info
 
 .feature-info {
-  margin-bottom: 200px;
   img {
     width: 100%;
     max-width: 600px;
@@ -207,7 +218,7 @@ nav {
   }
 
   .download-card {
-    margin-bottom: 60px;
+    margin-top: 60px;
     @include flex-col-bottom;
     @include margin-center;
     max-width: 300px;
@@ -247,6 +258,10 @@ nav {
       width: 960px;
       transform: translateY(-50px);
 
+      .download-card:first-child {
+        margin-top: 0;
+      }
+
       .download-card:nth-child(2) {
         margin-top: 80px;
       }
@@ -274,6 +289,7 @@ nav {
     width: 100%;
     padding: 20px 0;
     border-bottom: 1px solid $grayBlue;
+    text-align: left;
     p {
       margin: 0;
     }
@@ -282,8 +298,6 @@ nav {
   button {
     margin-top: 60px;
   }
-
-  margin-bottom: 150px;
 }
 
 // contact
@@ -368,6 +382,11 @@ footer {
   }
 
   .right {
+    svg:hover path {
+      fill: $softBlue;
+      transition: all 0.1s ease-in;
+    }
+
     svg:last-child {
       margin-left: 40px;
     }
@@ -394,6 +413,12 @@ footer {
         height: auto;
         a {
           margin: 0 20px;
+          transition: all 0.1s ease-in;
+          padding-bottom: 5px;
+          &:hover:not(.btn) {
+            color: rgb(184, 190, 205);
+            border-bottom: 2px solid rgb(184, 190, 205);
+          }
         }
       }
     }

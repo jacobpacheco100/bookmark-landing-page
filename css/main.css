@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
+.spacedT {
+  letter-spacing: 0.5rem;
+  font-size: 13px;
+}
+
 .mt-6 {
   margin-top: 170px;
 }
@@ -7,11 +12,17 @@
   padding: 10px 28px;
   border-radius: 5px;
   font-weight: 500;
+  box-shadow: rgba(63, 71, 135, 0.197) 0px 4px 6px -1px, rgba(73, 80, 212, 0.06) 0px 2px 4px -1px;
 }
 
 .btn-blue {
   background: hsl(231deg, 69%, 60%);
   color: white;
+}
+.btn-blue:hover {
+  background: hsl(231deg, 50%, 44%);
+  color: white;
+  border: 1px solid hsl(231deg, 50%, 44%);
 }
 
 .btn-gray {
@@ -23,6 +34,11 @@
   background: hsl(0deg, 94%, 66%);
   color: white;
 }
+.btn-red:hover {
+  background: hsl(0deg, 60%, 53%);
+  color: white;
+  border: 1px solid hsl(0deg, 60%, 53%);
+}
 
 .text-content h1,
 .text-content h2,
@@ -32,6 +48,10 @@
 .text-content p {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+section:not(.contact) {
+  margin-bottom: 150px;
 }
 
 *,
@@ -46,14 +66,6 @@ a {
   list-style: none;
   text-decoration: none;
   color: hsl(229deg, 8%, 60%);
-}
-
-body {
-  font-size: 16px;
-  font-family: "Rubik", sans-serif;
-  font-weight: 400;
-  color: hsl(229deg, 8%, 60%);
-  line-height: 1.7rem;
 }
 
 h1,
@@ -83,12 +95,15 @@ nav {
 }
 .nav-content ul a {
   margin: 0 20px;
+  transition: all 0.1s ease-in;
+  padding-bottom: 5px;
+}
+.nav-content ul a:hover:not(.btn) {
+  color: hsl(231deg, 69%, 60%);
+  border-bottom: 2px solid hsl(231deg, 69%, 60%);
 }
 .nav-content ul .login-btn {
-  padding: 10px 28px;
-  border-radius: 5px;
-  background: hsl(0deg, 94%, 66%);
-  color: white;
+  padding: 7px 28px;
 }
 
 .hamburger:hover {
@@ -114,6 +129,9 @@ nav {
   margin-top: 25px;
   margin-bottom: 25px;
 }
+.hero .hero-btn button:last-child {
+  margin-left: 10px;
+}
 .hero img {
   max-width: 800px;
   width: 80%;
@@ -129,6 +147,12 @@ nav {
   .hero img {
     padding-top: 80px;
     width: 800px;
+  }
+}
+@media (max-width: 390px) {
+  .hero button {
+    margin-top: 20px;
+    width: 185px;
   }
 }
 
@@ -179,6 +203,7 @@ nav {
     margin-right: auto;
     width: 100%;
     border: none;
+    margin: 50px 0 70px 0;
   }
   .features .intro-features ul li:nth-child(2) {
     border-top: none;
@@ -186,12 +211,10 @@ nav {
   }
   .features .intro-features ul li {
     border-bottom: 1px solid hsl(229deg, 8%, 60%);
+    padding-top: 0;
   }
 }
 
-.feature-info {
-  margin-bottom: 200px;
-}
 .feature-info img {
   width: 100%;
   max-width: 600px;
@@ -241,7 +264,7 @@ nav {
   max-width: 500px;
 }
 .downloadTE .download-card {
-  margin-bottom: 60px;
+  margin-top: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -282,6 +305,9 @@ nav {
     width: 960px;
     transform: translateY(-50px);
   }
+  .downloadTE .download-cards-container .download-card:first-child {
+    margin-top: 0;
+  }
   .downloadTE .download-cards-container .download-card:nth-child(2) {
     margin-top: 80px;
   }
@@ -295,7 +321,6 @@ nav {
   margin-right: auto;
   text-align: center;
   max-width: 600px;
-  margin-bottom: 150px;
 }
 .questions .text-content {
   margin-bottom: 50px;
@@ -308,6 +333,7 @@ nav {
   width: 100%;
   padding: 20px 0;
   border-bottom: 1px solid hsl(229deg, 8%, 60%);
+  text-align: left;
 }
 .questions .question p {
   margin: 0;
@@ -396,6 +422,10 @@ footer {
 .inner-footer .left ul a {
   margin: 0 20px;
 }
+.inner-footer .right svg:hover path {
+  fill: hsl(231deg, 69%, 60%);
+  transition: all 0.1s ease-in;
+}
 .inner-footer .right svg:last-child {
   margin-left: 40px;
 }
@@ -429,6 +459,12 @@ footer {
   }
   .inner-footer .left ul a {
     margin: 0 20px;
+    transition: all 0.1s ease-in;
+    padding-bottom: 5px;
+  }
+  .inner-footer .left ul a:hover:not(.btn) {
+    color: rgb(184, 190, 205);
+    border-bottom: 2px solid rgb(184, 190, 205);
   }
   .inner-footer .right svg {
     margin-left: 40px;
