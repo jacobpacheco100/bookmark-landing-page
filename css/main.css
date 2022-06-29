@@ -183,6 +183,10 @@ nav {
   padding: 20px 0;
   width: 100%;
 }
+.features .intro-features ul li:hover {
+  cursor: pointer;
+  font-weight: 500;
+}
 .features .intro-features ul li:nth-child(2) {
   border-top: 1px solid hsl(229deg, 8%, 60%);
   border-bottom: 1px solid hsl(229deg, 8%, 60%);
@@ -214,6 +218,7 @@ nav {
   }
 }
 .features .bb-red {
+  transition: all 0.1s ease-in;
   border-bottom: 3px solid hsl(0deg, 94%, 66%) !important;
 }
 
@@ -352,7 +357,7 @@ nav {
   justify-content: space-between;
   flex-direction: row;
   width: 100%;
-  padding: 20px 0;
+  padding: 20px;
   border-bottom: 1px solid hsl(229deg, 8%, 60%);
   text-align: left;
 }

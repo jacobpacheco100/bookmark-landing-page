@@ -53,7 +53,7 @@ features.addEventListener("click", (event) => {
     sb.classList.add("bb-red")
     ss.classList.remove("bb-red")
     es.classList.remove("bb-red")
-  } else if (e.classList.contains("SB")) {
+  } else if (e.classList.contains("SS")) {
     sb.classList.remove("bb-red")
     ss.classList.add("bb-red")
     es.classList.remove("bb-red")
