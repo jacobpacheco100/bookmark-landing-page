@@ -345,18 +345,22 @@ nav {
 
 footer {
   background: $darkBlue;
+  padding: 40px 0;
 }
 
 .inner-footer {
-  height: 70px;
-  @include flex-row;
+  min-height: 70px;
+  @include flex-col-center;
 
   .left {
-    @include flex-inline;
+    @include flex-col-center;
 
     ul {
-      @include flex-inline;
-      margin-left: 40px;
+      @include flex-col-center;
+      // margin-left: 40px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      height: 140px;
       a {
         margin: 0 20px;
       }
@@ -364,8 +368,40 @@ footer {
   }
 
   .right {
-    svg {
+    svg:last-child {
       margin-left: 40px;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  footer {
+    padding: 0;
+  }
+
+  .inner-footer {
+    height: 70px;
+    @include flex-row;
+
+    .left {
+      @include flex-row;
+
+      ul {
+        @include flex-row;
+        margin-left: 40px;
+        margin-top: 0;
+        margin-bottom: 0;
+        height: auto;
+        a {
+          margin: 0 20px;
+        }
+      }
+    }
+
+    .right {
+      svg {
+        margin-left: 40px;
+      }
     }
   }
 }
