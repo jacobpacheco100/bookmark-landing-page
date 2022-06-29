@@ -156,7 +156,7 @@ nav {
 // feature info
 
 .feature-info {
-  margin-bottom: 100px;
+  margin-bottom: 200px;
   img {
     width: 100%;
     max-width: 600px;
@@ -189,6 +189,183 @@ nav {
 
     p {
       margin-top: 20px;
+    }
+  }
+}
+
+// Download the extention ( DownloadTE )
+
+.downloadTE {
+  text-align: center;
+  .intro-downloadTE {
+    margin-bottom: 50px;
+    p {
+      @include margin-center;
+      margin-top: 20px;
+      max-width: 500px;
+    }
+  }
+
+  .download-card {
+    margin-bottom: 60px;
+    @include flex-col-bottom;
+    @include margin-center;
+    max-width: 300px;
+    height: 430px;
+    border-radius: 20px;
+    box-shadow: rgba(29, 49, 138, 0.222) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+
+    .card-info {
+      h3 {
+        margin-top: 50px;
+      }
+
+      p {
+        margin-bottom: 40px;
+      }
+    }
+
+    .btn-container {
+      width: 100%;
+      padding: 25px;
+      border-top: 2px solid hsl(231, 48%, 92%);
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (min-width: $desktop) {
+    .intro-downloadTE {
+      margin-bottom: 0px;
+    }
+    .download-cards-container {
+      @include flex-row;
+      @include margin-center;
+      width: 960px;
+      transform: translateY(-50px);
+
+      .download-card:nth-child(2) {
+        margin-top: 80px;
+      }
+
+      .download-card:nth-child(3) {
+        margin-top: 160px;
+      }
+    }
+  }
+}
+
+// frequently Ask Questions
+
+.questions {
+  @include margin-center;
+  text-align: center;
+  max-width: 600px;
+
+  .text-content {
+    margin-bottom: 50px;
+  }
+
+  .question {
+    @include flex-row;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid $grayBlue;
+    p {
+      margin: 0;
+    }
+  }
+
+  button {
+    margin-top: 60px;
+  }
+
+  margin-bottom: 150px;
+}
+
+// contact
+
+.contact {
+  .inner-contact {
+    max-width: 600px;
+  }
+
+  background: $softBlue;
+  color: white;
+  text-align: center;
+  padding: 80px 0;
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    color: white;
+    margin-bottom: 40px;
+  }
+
+  input {
+    height: 46px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    color: $grayBlue;
+    border-radius: 5px;
+    border: none;
+    &::placeholder {
+      color: hsl(231, 17%, 84%);
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+
+  @media (min-width: $desktop) {
+    form {
+      @include flex-row;
+      @include margin-center;
+      input {
+        width: 500px;
+        margin: 0;
+      }
+
+      button {
+        margin-left: 20px;
+        max-width: 144px;
+      }
+    }
+  }
+}
+
+// footer
+
+footer {
+  background: $darkBlue;
+}
+
+.inner-footer {
+  height: 70px;
+  @include flex-row;
+
+  .left {
+    @include flex-inline;
+
+    ul {
+      @include flex-inline;
+      margin-left: 40px;
+      a {
+        margin: 0 20px;
+      }
+    }
+  }
+
+  .right {
+    svg {
+      margin-left: 40px;
     }
   }
 }
