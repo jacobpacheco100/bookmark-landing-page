@@ -87,14 +87,19 @@
             >
           </div>
         </div>
-        <img src="assets/images/illustration-hero.svg" alt="web-illustration" />
+        <div class="img-shape-container">
+          <img
+            src="assets/images/illustration-hero.svg"
+            alt="web-illustration"
+          />
+        </div>
       </div>
     </section>
 
     <!-- features -->
     <section id="features" class="container features">
       <div class="intro-features">
-        <h1>Features</h1>
+        <h2>Features</h2>
         <p>
           Our aim is to make it quick and easy for you to access your favorite
           websites. Your bookmakes sync between your devices so you can access
@@ -114,7 +119,7 @@
         />
         <div class="ft-info-content">
           <div class="text-content">
-            <h1 class="ft-h1">Bookmark in one click</h1>
+            <h2 class="ft-h1">Bookmark in one click</h2>
             <p class="ft-p">
               Organize your bookmarks however you like. Our simple drag-and-drop
               interface gives you complete control over how you manage your
@@ -129,7 +134,7 @@
     <!-- Download -->
     <section id="pricing" class="container downloadTE">
       <div class="intro-downloadTE">
-        <h1>Download the extention</h1>
+        <h2>Download the extention</h2>
         <p>
           We've got more browsers in the pipline. Please do let us know if
           you've got a favourite you'd like us to prioritize
@@ -175,6 +180,7 @@
       </div>
     </section>
 
+    <!-- qna -->
     <section class="container questions-container">
       <div class="text-content">
         <h2>Frequently Asked Questions</h2>
@@ -281,12 +287,19 @@
     <!-- contact -->
     <section id="contact" class="contact">
       <div class="container inner-contact">
-        <div>
+        <div class="contact-info">
           <p class="spacedT">35,000+ ALREADY JOINED</p>
           <h1>Stay up-to-date with what we're doing</h1>
         </div>
-        <form action="#">
-          <input placeholder="Enter your email address" type="text" />
+        <form action="#contact">
+          <div class="email-input">
+            <input
+              id="email"
+              placeholder="Enter your email address"
+              type="text"
+            />
+            <p id="response" class="email-validation">Email Sent!</p>
+          </div>
           <button class="btn btn-red" type="submit">Contact Us</button>
         </form>
       </div>

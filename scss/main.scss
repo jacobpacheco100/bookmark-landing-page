@@ -25,6 +25,10 @@ h3 {
   @include headingT;
 }
 
+body {
+  // overflow-x: hidden;
+}
+
 // nav
 
 nav {
@@ -74,6 +78,7 @@ nav {
 
   .hero-cta {
     max-width: 450px;
+    margin-top: 50px;
 
     p {
       margin-top: 25px;
@@ -86,11 +91,43 @@ nav {
   }
 
   img {
-    max-width: 800px;
+    max-width: 700px;
     width: 80%;
   }
 
+  .img-shape-container {
+    position: relative;
+    .bg-shape {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background: $softBlue;
+      height: 200px;
+      width: 100%;
+      border-radius: 100px 0 0 100px;
+      z-index: -1;
+    }
+  }
+
   @media (min-width: $desktop) {
+    .img-shape-container {
+      position: relative;
+      .bg-shape {
+        position: absolute;
+        bottom: 0;
+        right: -50%;
+        background: $softBlue;
+        height: 400px;
+        width: 100%;
+        border-radius: 200px 0 0 200px;
+        z-index: -1;
+      }
+    }
+
+    .hero-cta {
+      margin-top: 0;
+    }
+
     .inner-hero {
       @include flex-row;
       text-align: left;
@@ -98,7 +135,7 @@ nav {
 
     img {
       padding-top: 80px;
-      width: 800px;
+      width: 700px;
     }
   }
 
@@ -134,6 +171,7 @@ nav {
         width: 100%;
         &:hover {
           cursor: pointer;
+          color: $softRed;
           font-weight: 500;
         }
       }
@@ -191,7 +229,7 @@ nav {
     max-width: 600px;
   }
 
-  h1 {
+  h2 {
     margin-top: 50px;
   }
 
@@ -220,7 +258,7 @@ nav {
     }
 
     p,
-    h1 {
+    h2 {
       margin: 0;
     }
 
@@ -329,10 +367,17 @@ nav {
       @include flex-row;
       width: 100%;
       text-align: left;
-
+      &:hover {
+        cursor: pointer;
+      }
       p {
         color: $darkBlue;
       }
+    }
+
+    .question-title:hover p {
+      transition: 0.1s all ease-in;
+      color: $softBlue;
     }
 
     .answer {
@@ -364,14 +409,20 @@ nav {
 // contact
 
 .contact {
-  .inner-contact {
-    max-width: 600px;
-  }
-
   background: $softBlue;
   color: white;
   text-align: center;
   padding: 80px 0;
+
+  .inner-contact {
+    @include margin-center;
+    max-width: 800px;
+  }
+
+  .contact-info {
+    @include margin-center;
+    max-width: 600px;
+  }
 
   p {
     margin-bottom: 10px;
@@ -385,7 +436,6 @@ nav {
   input {
     height: 46px;
     width: 100%;
-    margin-bottom: 20px;
     padding: 20px;
     color: $grayBlue;
     border-radius: 5px;
@@ -393,22 +443,66 @@ nav {
     &::placeholder {
       color: hsl(231, 17%, 84%);
     }
+    &:focus {
+      outline: 3px solid hsl(231, 85%, 71%);
+    }
   }
 
   button {
+    height: 46px;
     width: 100%;
+    min-width: 150px;
+    margin-top: 20px;
+  }
+
+  // response
+
+  .email-validation {
+    display: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 3px 15px;
+    width: 100%;
+    text-align: left;
+    color: white;
+    border-radius: 0px 0px 5px 5px;
+  }
+  //
+
+  .response-valid {
+    input {
+      border: 2px solid rgb(43, 165, 43);
+      border-radius: 5px 5px 0px 0px;
+    }
+    .email-validation {
+      display: block;
+      background: rgb(43, 165, 43);
+    }
+  }
+
+  .response-invalid {
+    input {
+      border: 2px solid $softRed;
+      border-radius: 5px 5px 0px 0px;
+    }
+    .email-validation {
+      display: block;
+      background: $softRed;
+    }
   }
 
   @media (min-width: $desktop) {
     form {
-      @include flex-row;
+      @include flex-inline;
       @include margin-center;
+      max-width: 600px;
       input {
         width: 500px;
-        margin: 0;
       }
 
       button {
+        align-self: baseline;
+        margin: 0;
         margin-left: 20px;
         max-width: 144px;
       }
@@ -448,7 +542,7 @@ footer {
       transition: all 0.1s ease-in;
     }
 
-    svg:last-child {
+    a:last-child {
       margin-left: 40px;
     }
   }
@@ -481,12 +575,6 @@ footer {
             border-bottom: 2px solid rgb(184, 190, 205);
           }
         }
-      }
-    }
-
-    .right {
-      svg {
-        margin-left: 40px;
       }
     }
   }

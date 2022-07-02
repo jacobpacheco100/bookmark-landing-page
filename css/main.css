@@ -2,6 +2,7 @@
 .spacedT {
   letter-spacing: 0.5rem;
   font-size: 13px;
+  color: white;
 }
 
 .mt-6 {
@@ -138,6 +139,7 @@ nav {
 }
 .hero .hero-cta {
   max-width: 450px;
+  margin-top: 50px;
 }
 .hero .hero-cta p {
   margin-top: 25px;
@@ -147,10 +149,39 @@ nav {
   margin-right: 10px;
 }
 .hero img {
-  max-width: 800px;
+  max-width: 700px;
   width: 80%;
 }
+.hero .img-shape-container {
+  position: relative;
+}
+.hero .img-shape-container .bg-shape {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: hsl(231deg, 69%, 60%);
+  height: 200px;
+  width: 100%;
+  border-radius: 100px 0 0 100px;
+  z-index: -1;
+}
 @media (min-width: 1200px) {
+  .hero .img-shape-container {
+    position: relative;
+  }
+  .hero .img-shape-container .bg-shape {
+    position: absolute;
+    bottom: 0;
+    right: -50%;
+    background: hsl(231deg, 69%, 60%);
+    height: 400px;
+    width: 100%;
+    border-radius: 200px 0 0 200px;
+    z-index: -1;
+  }
+  .hero .hero-cta {
+    margin-top: 0;
+  }
   .hero .inner-hero {
     display: flex;
     align-items: center;
@@ -160,7 +191,7 @@ nav {
   }
   .hero img {
     padding-top: 80px;
-    width: 800px;
+    width: 700px;
   }
 }
 @media (max-width: 390px) {
@@ -199,6 +230,7 @@ nav {
 }
 .features .intro-features ul li:hover {
   cursor: pointer;
+  color: hsl(0deg, 94%, 66%);
   font-weight: 500;
 }
 .features .intro-features ul li:nth-child(2) {
@@ -245,7 +277,7 @@ nav {
   width: 100%;
   max-width: 600px;
 }
-.feature-info h1 {
+.feature-info h2 {
   margin-top: 50px;
 }
 .feature-info button {
@@ -279,7 +311,7 @@ nav {
     width: 100%;
   }
   .feature-info p,
-.feature-info h1 {
+.feature-info h2 {
     margin: 0;
   }
   .feature-info p {
@@ -387,8 +419,15 @@ nav {
   width: 100%;
   text-align: left;
 }
+.questions-container .question-list .question-title:hover {
+  cursor: pointer;
+}
 .questions-container .question-list .question-title p {
   color: hsl(229deg, 31%, 21%);
+}
+.questions-container .question-list .question-title:hover p {
+  transition: 0.1s all ease-in;
+  color: hsl(231deg, 69%, 60%);
 }
 .questions-container .question-list .answer {
   margin-top: 20px;
@@ -414,6 +453,13 @@ nav {
   padding: 80px 0;
 }
 .contact .inner-contact {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}
+.contact .contact-info {
+  margin-left: auto;
+  margin-right: auto;
   max-width: 600px;
 }
 .contact p {
@@ -426,7 +472,6 @@ nav {
 .contact input {
   height: 46px;
   width: 100%;
-  margin-bottom: 20px;
   padding: 20px;
   color: hsl(229deg, 8%, 60%);
   border-radius: 5px;
@@ -435,23 +480,55 @@ nav {
 .contact input::placeholder {
   color: hsl(231deg, 17%, 84%);
 }
+.contact input:focus {
+  outline: 3px solid hsl(231deg, 85%, 71%);
+}
 .contact button {
+  height: 46px;
   width: 100%;
+  min-width: 150px;
+  margin-top: 20px;
+}
+.contact .email-validation {
+  display: none;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 3px 15px;
+  width: 100%;
+  text-align: left;
+  color: white;
+  border-radius: 0px 0px 5px 5px;
+}
+.contact .response-valid input {
+  border: 2px solid rgb(43, 165, 43);
+  border-radius: 5px 5px 0px 0px;
+}
+.contact .response-valid .email-validation {
+  display: block;
+  background: rgb(43, 165, 43);
+}
+.contact .response-invalid input {
+  border: 2px solid hsl(0deg, 94%, 66%);
+  border-radius: 5px 5px 0px 0px;
+}
+.contact .response-invalid .email-validation {
+  display: block;
+  background: hsl(0deg, 94%, 66%);
 }
 @media (min-width: 1200px) {
   .contact form {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
     margin-left: auto;
     margin-right: auto;
+    max-width: 600px;
   }
   .contact form input {
     width: 500px;
-    margin: 0;
   }
   .contact form button {
+    align-self: baseline;
+    margin: 0;
     margin-left: 20px;
     max-width: 144px;
   }
@@ -491,7 +568,7 @@ footer {
   fill: hsl(231deg, 69%, 60%);
   transition: all 0.1s ease-in;
 }
-.inner-footer .right svg:last-child {
+.inner-footer .right a:last-child {
   margin-left: 40px;
 }
 
@@ -530,9 +607,6 @@ footer {
   .inner-footer .left ul a:hover:not(.btn) {
     color: rgb(184, 190, 205);
     border-bottom: 2px solid rgb(184, 190, 205);
-  }
-  .inner-footer .right svg {
-    margin-left: 40px;
   }
 }
 

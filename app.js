@@ -69,8 +69,28 @@ features.addEventListener("click", (event) => {
 const questions = document.querySelectorAll(".question")
 
 questions.forEach((question) => {
-  const btn = question.querySelector("button")
+  const btn = question.querySelector(".question-title")
   btn.addEventListener("click", () => {
     question.classList.toggle("show-text")
   })
+})
+
+// Email validation
+
+const form = document.querySelector("form")
+const email = document.getElementById("email")
+// email.value = "jacob@gmail.com"
+
+const response = document.getElementById("response")
+const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+form.addEventListener("submit", () => {
+  if (pattern.test(email.value)) {
+    form.classList.remove("response-invalid")
+    form.classList.toggle("response-valid")
+    response.textContent = "Email sent!"
+  } else {
+    form.classList.toggle("response-invalid")
+    response.textContent = "Whoops! Make sure its an email"
+  }
 })
