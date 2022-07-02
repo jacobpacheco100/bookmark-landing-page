@@ -63,3 +63,14 @@ features.addEventListener("click", (event) => {
     es.classList.add("bb-red")
   }
 })
+
+// Q&A
+
+const questions = document.querySelectorAll(".question")
+
+questions.forEach((question) => {
+  const btn = question.querySelector("button")
+  btn.addEventListener("click", () => {
+    question.classList.toggle("show-text")
+  })
+})

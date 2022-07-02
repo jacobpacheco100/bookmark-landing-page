@@ -91,6 +91,11 @@ $t-sml: 16px;
 $btn-shadow: rgba(63, 71, 135, 0.197) 0px 4px 6px -1px,
   rgba(73, 80, 212, 0.06) 0px 2px 4px -1px;
 
+.btn-clear {
+  background-color: white;
+  border: none;
+}
+
 .btn {
   padding: 10px 28px;
   border-radius: 5px;
@@ -145,5 +150,3 @@ $btn-shadow: rgba(63, 71, 135, 0.197) 0px 4px 6px -1px,
 section:not(.contact) {
   margin-bottom: 150px !important;
 }
-
-// features underline
