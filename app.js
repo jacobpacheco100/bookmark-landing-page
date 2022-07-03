@@ -94,3 +94,16 @@ form.addEventListener("submit", () => {
     response.textContent = "Whoops! Make sure its an email"
   }
 })
+
+// menu overlay
+
+const menu = document.getElementById("menu-btn")
+const nav = document.querySelector("nav")
+const links = document.querySelector(".ov-links")
+
+menu.addEventListener("click", () => {
+  nav.classList.toggle("active-ov")
+  links.addEventListener("click", () => {
+    nav.classList.remove("active-ov")
+  })
+})

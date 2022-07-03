@@ -25,11 +25,13 @@ h3 {
   @include headingT;
 }
 
-body {
-  // overflow-x: hidden;
-}
-
 // nav
+
+@media (max-width: 320px) {
+  .container {
+    max-width: 85%;
+  }
+}
 
 nav {
   width: 100%;
@@ -65,6 +67,87 @@ nav {
   }
 }
 
+// OVERLAY
+
+.logo,
+.menu-ico {
+  z-index: 100;
+}
+
+.menu-overlay {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: hsla(229, 31%, 21%, 0.932);
+
+  // transition
+
+  .ov-links {
+    @include flex-col-center;
+    @include margin-center;
+    width: 100%;
+    padding-top: 100px;
+    letter-spacing: 0.2rem;
+    font-weight: 500;
+
+    a {
+      color: white;
+      text-align: center;
+      width: 100%;
+      padding: 20px;
+      border-bottom: 1px solid rgb(141, 150, 171);
+    }
+    button {
+      letter-spacing: 0.2rem;
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  }
+  .ov-social {
+    @include margin-center;
+    margin-top: 240px;
+    width: 100px;
+
+    img {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}
+
+// toggle active-ov  on  nav
+
+.active-ov {
+  .menu-overlay {
+    display: block;
+  }
+  .bookmark-logo path,
+  .bookmark-logo circle {
+    fill: white;
+  }
+  .bookmark-logo .mark {
+    fill: $darkBlue;
+  }
+
+  .hamburger path {
+    fill: white;
+  }
+}
+
+@media (min-width: $desktop) {
+  .menu-ico {
+    display: none;
+  }
+}
+
 // HERO
 
 .hero {
@@ -78,7 +161,6 @@ nav {
 
   .hero-cta {
     max-width: 450px;
-    margin-top: 50px;
 
     p {
       margin-top: 25px;
@@ -91,43 +173,18 @@ nav {
   }
 
   img {
-    max-width: 700px;
+    max-width: 800px;
     width: 80%;
   }
 
-  .img-shape-container {
-    position: relative;
-    .bg-shape {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      background: $softBlue;
-      height: 200px;
-      width: 100%;
-      border-radius: 100px 0 0 100px;
-      z-index: -1;
-    }
+  .hero-cta {
+    margin-top: 50px;
   }
 
   @media (min-width: $desktop) {
-    .img-shape-container {
-      position: relative;
-      .bg-shape {
-        position: absolute;
-        bottom: 0;
-        right: -50%;
-        background: $softBlue;
-        height: 400px;
-        width: 100%;
-        border-radius: 200px 0 0 200px;
-        z-index: -1;
-      }
-    }
-
     .hero-cta {
-      margin-top: 0;
+      margin-top: 0px;
     }
-
     .inner-hero {
       @include flex-row;
       text-align: left;
@@ -135,7 +192,7 @@ nav {
 
     img {
       padding-top: 80px;
-      width: 700px;
+      width: 800px;
     }
   }
 
@@ -144,6 +201,100 @@ nav {
       margin-top: 20px;
       width: 185px;
     }
+  }
+}
+
+/// shape
+
+.shape-container {
+  position: relative;
+}
+
+.shape {
+  position: absolute;
+  background: $softBlue;
+  height: 200px;
+  width: 50%;
+  z-index: -1;
+
+  bottom: 50%;
+  right: 0;
+  border-radius: 100px 0 0 100px;
+}
+
+@media (max-width: 409px) {
+  .shape {
+    height: 150px;
+    border-radius: 75px 0 0 75px;
+    top: 10%;
+  }
+}
+@media (max-width: 320px) {
+  .shape {
+    height: 100px;
+    border-radius: 75px 0 0 75px;
+    top: 5%;
+  }
+}
+
+@media (min-width: $mobile-lg) {
+  .shape {
+    bottom: 45%;
+  }
+}
+
+@media (min-width: 992px) {
+  .shape {
+    bottom: 40%;
+  }
+}
+
+@media (min-width: $desktop) {
+  .shape {
+    bottom: 0;
+    width: 40%;
+    height: 300px;
+    border-radius: 150px 0 0 150px;
+  }
+}
+
+/// shape 2
+
+.shape2-container {
+  position: relative;
+}
+
+.shape2 {
+  position: absolute;
+  background: $softBlue;
+  height: 200px;
+  width: 70%;
+  z-index: -1;
+
+  bottom: 25%;
+  left: 0;
+  border-radius: 0 100px 100px 0;
+}
+
+@media (min-width: $mobile-lg) {
+  .shape2 {
+    bottom: 23%;
+  }
+}
+
+@media (min-width: 992px) {
+  .shape2 {
+    bottom: 23%;
+    height: 300px;
+  }
+}
+
+@media (min-width: $desktop) {
+  .shape2 {
+    top: 64%;
+    width: 40%;
+    height: 300px;
+    border-radius: 0 150px 150px 0;
   }
 }
 
@@ -222,6 +373,7 @@ nav {
   .ft-info-content {
     max-width: 500px;
     @include margin-center;
+    margin-top: 150px;
   }
 
   img {
@@ -409,20 +561,14 @@ nav {
 // contact
 
 .contact {
+  .inner-contact {
+    max-width: 600px;
+  }
+
   background: $softBlue;
   color: white;
   text-align: center;
   padding: 80px 0;
-
-  .inner-contact {
-    @include margin-center;
-    max-width: 800px;
-  }
-
-  .contact-info {
-    @include margin-center;
-    max-width: 600px;
-  }
 
   p {
     margin-bottom: 10px;
@@ -493,9 +639,8 @@ nav {
 
   @media (min-width: $desktop) {
     form {
-      @include flex-inline;
+      @include flex-row;
       @include margin-center;
-      max-width: 600px;
       input {
         width: 500px;
       }
@@ -578,4 +723,12 @@ footer {
       }
     }
   }
+}
+
+// bg shapes
+
+.shape1 {
+  background: $softBlue;
+  height: 200px;
+  width: 500px;
 }
