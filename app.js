@@ -84,7 +84,8 @@ const email = document.getElementById("email")
 const response = document.getElementById("response")
 const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-form.addEventListener("submit", () => {
+form.addEventListener("submit", (e) => {
+  e.preventDefault()
   if (pattern.test(email.value)) {
     form.classList.remove("response-invalid")
     form.classList.toggle("response-valid")
